@@ -1,6 +1,6 @@
-# Members-Only
+# Private-Events
 
-The objective of this project is to practice the implementation of authentication.
+This project focus on creating an app for event management, with the objective of studying database relations and Active Record modeling. The specifications of the project are available on [The Odin Project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations). This is part of the [Microverse](https://www.microverse.org/) curriculum.
 
 ## Built With
 
@@ -57,7 +57,7 @@ If you have contributions to make, send me a message telling me about your ideas
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/luis-novoa/members-only/issues).
+Feel free to check the [issues page](./issues).
 
 ## Show your support
 
@@ -65,4 +65,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/luis-novoa/members-only/blob/authentication/LICENSE) licensed.
+This project is [MIT](./LICENSE) licensed.
