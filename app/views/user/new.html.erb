@@ -1,0 +1,12 @@
+<h1>Create your Account</h1>
+
+<%= form_with(model: @user, local: true ) do |f| %>
+  <%= f.label :name, size: 50 %><br>
+  <%= f.text_field :name, size: 50 %><br><br>
+  <%= f.label :email, size: 50 %><br>
+  <%= f.email_field :email, size: 50 %><br><br>
+  <%= f.label :password, size: 50 %><br>
+  <%= f.password_field :password, size: 50 %><br><br>
+  <%= f.label :password_confirmation, size: 50 %> <br>
+  <%= f.password_field :password_confirmation, size: 50 %><br><br>
+<% end %>
