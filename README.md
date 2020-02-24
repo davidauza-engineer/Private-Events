@@ -57,7 +57,7 @@ If you have contributions to make, send me a message telling me about your ideas
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](./issues).
+Feel free to check the [issues page](https://github.com/davidauza-engineer/Private-Events/issues).
 
 ## Show your support
 
