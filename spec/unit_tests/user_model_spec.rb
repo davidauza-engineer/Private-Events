@@ -4,7 +4,7 @@ RSpec.describe 'User model', type: :model do
   let(:test_user) { User.new(name: 'Example', email: 'user@user.com') }
   let(:another_user) { User.new(name: 'Compare', email: 'compare@user.com') }
 
-  describe 'name validations' do
+  describe 'invalid name cases' do
 
     it 'user without name is invalid' do
       test_user.name = nil
@@ -28,7 +28,7 @@ RSpec.describe 'User model', type: :model do
     end
   end
 
-  describe 'email validations' do
+  describe 'invalid email cases' do
     it 'rejects an user with empty email' do
       test_user.email = nil
       expect(test_user.valid?).to eq(false)
@@ -53,6 +53,12 @@ RSpec.describe 'User model', type: :model do
     it 'rejects an user with an email not properly formatted' do
       test_user.email = 'invalid@'
       expect(test_user.valid?).to eq(false)
+    end
+  end
+
+  describe 'the valid case' do
+    it 'accepts an user with valid name and email' do
+      expect(test_user.valid?).to eq(true)
     end
   end
 end
