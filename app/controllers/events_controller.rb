@@ -8,8 +8,11 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
   end
 
   def create
+    @user = User.find(session[:user_id])
+    @event = @user.events.build
   end
 end
