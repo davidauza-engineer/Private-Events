@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   validate :date_is_in_the_future
   validates :description, length: { maximum: 140 }
   belongs_to :creator, class_name: 'User'
+  has_many :attendances, foreign_key: :attended_event_id
+  has_many :attendees, through: :attendances, source: :attendee
 
   def date_is_in_the_future
     errors.add(:date, "can't be in the past") if !date.nil? && date < Time.now

@@ -5,4 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {minimum: 6, maximum: 140},
             uniqueness: true, format: {with: VALID_EMAIL_REGEX}
   has_many :events, foreign_key: :creator_id
+  has_many :attendances, foreign_key: :attendee_id
+  has_many :events_attended, through: :attendances, source: :attended_event
+
 end
