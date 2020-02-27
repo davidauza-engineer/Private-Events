@@ -5,3 +5,11 @@
   <li>Email: <%= @user.email %></li>
 </ol>
 
+<h2>Events Created</h2>
+
+<ol>
+  <% @user_events.each do |event| %>
+    <li>Name: <%= event.name %><br>Date: <%= event.date %></li>
+    <br>
+  <% end %>
+</ol>
