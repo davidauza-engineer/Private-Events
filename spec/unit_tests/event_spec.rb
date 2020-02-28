@@ -6,6 +6,10 @@ RSpec.describe Event, type: :model do
     Event.new(name: 'Test Title', description: 'Cool Event',
               date: 1.day.after, creator_id: 1)
   end
+  let(:past_event) do
+    Event.new(name: 'Past Event', description: 'So cool event',
+              date: 1.day.ago, creator_id: 1)
+  end
 
   describe 'valid event creation' do
 
@@ -68,6 +72,20 @@ RSpec.describe Event, type: :model do
 
     it 'rejects an event if no it has no valid creator_id' do
       expect(test_event.valid?).to eq(false)
+    end
+  end
+
+  describe 'tests for scopes' do
+    it 'returns the events from the past' do
+      test_user.save
+      past_event.save
+      expect(Event.past_events.first).to eq(Event.first)
+    end
+
+    it 'returns the events from the past' do
+      test_user.save
+      test_event.save
+      expect(Event.upcoming_events.first).to eq(Event.first)
     end
   end
 end
