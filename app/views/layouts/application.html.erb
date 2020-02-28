@@ -8,9 +8,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= link_to 'Home', root_url %>
-    <%= link_to 'Check all the events', events_index_path %>
-    <br>
+    <%= render 'layouts/header' %>
     <div>
       <% flash.each do |message_type, message| %>
         <%= message %>
