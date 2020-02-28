@@ -7,12 +7,4 @@ class User < ApplicationRecord
   has_many :events, foreign_key: :creator_id
   has_many :attendances, foreign_key: :attendee_id
   has_many :events_attended, through: :attendances, source: :attended_event
-
-  def upcoming_events
-    events_attended.where('date >= CURRENT_TIMESTAMP')
-  end
-
-  def previous_events
-    events_attended.where('date < CURRENT_TIMESTAMP')
-  end
 end

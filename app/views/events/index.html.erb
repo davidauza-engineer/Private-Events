@@ -1,6 +1,19 @@
 <h1>All the Events Created</h1>
+<h2>Upcoming Events</h2>
 <ol>
-  <% @events.each do |event| %>
+  <% @future.each do |event| %>
+    <li>Name: <%= event.name %><br>
+      Date: <%= event.date %>
+      <br>
+      Creator: <%= event.creator.name %><br>
+      <%= link_to 'View Description', event %>
+    </li>
+    <br>
+  <% end %>
+</ol>
+<h2>Past Events</h2>
+<ol>
+  <% @past.each do |event| %>
     <li>Name: <%= event.name %><br>
       Date: <%= event.date %>
       <br>
@@ -15,4 +28,3 @@
   <br>
   <br>
 <% end %>
-<%= link_to 'Home', root_url %>

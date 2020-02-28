@@ -9,5 +9,8 @@ class Event < ApplicationRecord
 
   def date_is_in_the_future
     errors.add(:date, "can't be in the past") if !date.nil? && date < Time.now
-  end 
+  end
+
+  scope :upcoming_events, -> { where("date >= ?", Time.now) }
+  scope :past_events, -> { where("date < ?", Time.now) }
 end
