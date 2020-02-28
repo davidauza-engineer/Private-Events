@@ -1,0 +1,30 @@
+<h1>All the Events Created</h1>
+<h2>Upcoming Events</h2>
+<ol>
+  <% @future.each do |event| %>
+    <li>Name: <%= event.name %><br>
+      Date: <%= event.date %>
+      <br>
+      Creator: <%= event.creator.name %><br>
+      <%= link_to 'View Description', event %>
+    </li>
+    <br>
+  <% end %>
+</ol>
+<h2>Past Events</h2>
+<ol>
+  <% @past.each do |event| %>
+    <li>Name: <%= event.name %><br>
+      Date: <%= event.date %>
+      <br>
+      Creator: <%= event.creator.name %><br>
+      <%= link_to 'View Description', event %>
+    </li>
+    <br>
+  <% end %>
+</ol>
+<% if session[:user_id] %>
+  <%= link_to 'Create new event', new_event_path %>
+  <br>
+  <br>
+<% end %>

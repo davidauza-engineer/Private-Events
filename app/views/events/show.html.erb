@@ -1,0 +1,12 @@
+<h1><%= @event.name %></h1>
+
+<p>Description: <%= @event.description %></p>
+<p>Date: <%= @event.date %></p>
+<p>Creator: <%= @event.creator.name %></p>
+
+<h2>List of Attendees</h2>
+<ol>
+  <% @event.attendees.each do |attendee| %>
+    <li><%= attendee.name %></li><br>
+  <% end %>
+</ol>

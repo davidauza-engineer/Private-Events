@@ -1,0 +1,31 @@
+<h1>Your Account</h1>
+<ol>
+  <li>Name: <%= @user.name %></li>
+  <li>Email: <%= @user.email %></li>
+</ol>
+<h2>Events Created</h2>
+<ol>
+  <% @user_events.each do |event| %>
+    <li>Name: <%= event.name %><br>
+      Date: <%= event.date %></li>
+    <br>
+  <% end %>
+</ol>
+
+<h2>Events Attending</h2>
+<h3>Upcoming Events</h3>
+<ol>
+  <% @upcoming_events.each do |event| %>
+    <li><%= event.name %></li>
+  <% end %>
+</ol>
+<h3>Previously Attended Events</h3>
+<ol>
+  <% @prev_events.each do |event| %>
+    <li><%= event.name %></li>
+  <% end %>
+</ol>
+
+<% if session[:user_id] == @user.id %>
+  <%= link_to 'Create new event', new_event_path %>
+<% end %>
