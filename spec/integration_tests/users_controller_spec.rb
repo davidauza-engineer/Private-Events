@@ -12,14 +12,14 @@ RSpec.describe 'Users controller', type: :feature do
 
   scenario 'sign up page creates new user' do
     fill_sign_up_form(name, email)
-    expect{ click_button 'Create' }.to change{ User.count }.by(1) 
+    expect { click_button 'Create' }.to change { User.count }.by(1)
   end
 
   scenario 'sign up page redirects to new user' do
     fill_sign_up_form(name, email)
     click_button 'Create'
 
-    expect(page).to have_current_path('/users/1') 
+    expect(page).to have_current_path('/users/1')
   end
 
   scenario 'flash message on successful sign up' do

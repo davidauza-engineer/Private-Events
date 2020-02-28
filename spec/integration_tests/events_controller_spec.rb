@@ -40,7 +40,7 @@ RSpec.describe 'Tests for events controller', type: :feature do
     fill_in 'Name', with: 'Test Event'
     fill_in 'Date', with: 1.day.after
     fill_in 'Description', with: 'Cool Description'
-    expect{ click_button('Create') }.to change{ Event.count }.by(1)
+    expect { click_button('Create') }.to change { Event.count }.by(1)
   end
 
   scenario 'a user is asked to log in before being able to create a new event' do

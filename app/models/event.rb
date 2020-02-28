@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  validates :name, presence: true, length: {minimum: 4, maximum: 50}
+  validates :name, presence: true, length: { minimum: 4, maximum: 50 }
   validates :date, presence: true
   validate :date_is_in_the_future
   validates :description, length: { maximum: 140 }
@@ -11,6 +11,6 @@ class Event < ApplicationRecord
     errors.add(:date, "can't be in the past") if !date.nil? && date < Time.now
   end
 
-  scope :upcoming_events, -> { where("date >= ?", Time.now) }
-  scope :past_events, -> { where("date < ?", Time.now) }
+  scope :upcoming_events, -> { where('date >= ?', Time.now) }
+  scope :past_events, -> { where('date < ?', Time.now) }
 end

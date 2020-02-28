@@ -12,16 +12,13 @@ RSpec.describe Event, type: :model do
   end
 
   describe 'valid event creation' do
-
     it 'successfuly creates an user with valid input' do
       test_user.save
       expect(test_event.valid?).to eq(true)
     end
-
   end
 
   describe 'invalid event creation' do
-
     it 'rejects a blank name for the event' do
       test_user.save
       test_event.name = ''

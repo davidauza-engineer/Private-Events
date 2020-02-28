@@ -18,7 +18,7 @@ RSpec.describe 'Sessions controller', type: :feature do
     fill_in 'Email', with: email
     click_button 'Log in'
 
-    expect(page).to have_selector 'div', text: "Email not registered."
+    expect(page).to have_selector 'div', text: 'Email not registered.'
   end
 
   scenario 'Succesful login leads to the user page' do

@@ -5,7 +5,6 @@ RSpec.describe 'User model', type: :model do
   let(:another_user) { User.new(name: 'Compare', email: 'compare@user.com') }
 
   describe 'invalid name cases' do
-
     it 'user without name is invalid' do
       test_user.name = nil
       expect(test_user.valid?).to eq(false)
