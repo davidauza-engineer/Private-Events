@@ -1,0 +1,13 @@
+<nav>
+  <ul class="navbar">
+    <% unless session[:user_id] %>
+      <li><a href="<%= login_path %>">Log In</a></li>
+      <li><a href="<%= sign_up_path %>">Sign Up</a></li>
+    <% end %>
+    <% if session[:user_id] %>
+      <li><a href="<%= user_path(current_user) %>">User</a></li>
+      <li><a href="<%= new_event_path %>">Create New Event</a></li>
+    <% end %>
+    <li><a href="<%= events_index_path %>">View All Events</a></li>
+  </ul>
+</nav>

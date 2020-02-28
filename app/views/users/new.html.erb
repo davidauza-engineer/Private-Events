@@ -1,0 +1,16 @@
+<h1>Create your Account</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>
+
+  <%= f.label :name, size: 50 %><br>
+  <%= f.text_field :name, size: 50 %><br><br>
+
+  <%= f.label :email, size: 50 %><br>
+  <%= f.email_field :email, size: 50 %><br><br>
+
+  <%= f.submit 'Create' %>
+<% end %>
+
+<br>
+
+<%= link_to 'Log In', login_path %>
